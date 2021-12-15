@@ -106,16 +106,25 @@ h5 {
   border-radius: 4px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .kanbanTopMenu {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
   color: #6e6d6d;
   margin-bottom: 30px;
+}
+
+.kanbanLeftMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+
 }
 
 .searchInputArea {
@@ -149,7 +158,7 @@ h5 {
   height: 100%;
   flex: 1;
   margin: 0 5px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 3px;
 }
 
@@ -159,4 +168,75 @@ h5 {
   justify-content: space-between;
   text-transform: uppercase;
   font-size: 14px;
+  padding: 10px;
+}
+
+/* Kanban Area */
+.kanbanCardArea {
+  width: 100%;
+  background-color: white;
+  font-size: 13px;
+  margin: 6px 0;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100px;
+  cursor: pointer;
+}
+
+.kanbanCardBottom {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.taskItemArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color:rgba(80, 79, 79, 0.5);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.taskItemPopup {
+  background: white;
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 2px rgb(65, 64, 64);
+}
+
+.formArea {
+  margin-top: 30px;
+}
+
+.formTextInputArea {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.formTextInput {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px 10px;
+  color: #666;
+}
+
+.popupBtnArea {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
