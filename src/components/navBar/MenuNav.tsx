@@ -46,14 +46,14 @@ const MenuNav = () => {
                 <p style={{ fontSize: '12px'}}>{secondTitle}</p>
             </div>
             <div className='topMainMenuNav'>
-                {topMenuItems.map(item => {
-                    return <MenuNavItem name={item.text}  /> 
+                {topMenuItems.map((item, idx) => {
+                    return <MenuNavItem name={item.text} key={idx}  /> 
                 }) }
             </div>
             <hr className='hrBreakPoint'></hr>
             <div className='bottomMainMenuNav'>
-                { mainMenuItems.map(item => {
-                    return <MenuNavItem name={item.text} />
+                { mainMenuItems.map((item, idx) => {
+                    return <MenuNavItem name={item.text} key={idx} />
                 }) }
             </div>
         </div>
