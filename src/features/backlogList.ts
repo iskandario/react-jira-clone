@@ -46,4 +46,6 @@ export const backlogList = createSlice({
   },
 });
 
+export const { addItem } = backlogList.actions;
+
 export default backlogList.reducer;
