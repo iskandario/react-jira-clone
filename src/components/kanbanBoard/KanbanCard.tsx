@@ -28,7 +28,7 @@ const KanbanCard = (cardItem: kanbanCardTypes)  => {
     }
 
     return (
-        <div className='kanbanCardArea'>
+        <div className='kanbanCardArea' style={cardItem.type === 'task' ? {  borderLeft: '2px solid #4C9AFF'} :  {borderLeft: '2px solid #36B37E' }} >
             <p>{ cardItem.description }</p>
             <div className='kanbanCardBottom'>
                 <div className='kanbanCardBottom'>
@@ -41,8 +41,6 @@ const KanbanCard = (cardItem: kanbanCardTypes)  => {
                 </div>
                 <div>{ cardItem.user }</div>
             </div>
-            
-            
         </div>
     )
 }

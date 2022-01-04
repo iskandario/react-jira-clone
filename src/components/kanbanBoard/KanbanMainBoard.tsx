@@ -1,7 +1,7 @@
 
 import KanbanBoardSection from "./KanbanBoardSection";
 
-const KanbanMainBoard = () => {
+const KanbanMainBoard = ({ onOpen }: any) => {
     // const boardTitles = ['Backlog', 'To Do', 'In Progress', 'Ready for QA', 'Done'];
 
     const boardInfo = [
@@ -30,7 +30,7 @@ const KanbanMainBoard = () => {
     return (
         <div className='mainBoardArea'>
             { boardInfo.map((board, idx) => {
-                return <KanbanBoardSection sectionName={board.title} storeType={board.store} key={idx} />
+                return <KanbanBoardSection sectionName={board.title} storeType={board.store} key={idx} onOpen={onOpen} />
             })}
         </div>
     )

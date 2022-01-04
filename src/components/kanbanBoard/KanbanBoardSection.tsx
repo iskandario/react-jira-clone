@@ -3,10 +3,11 @@ import { RootState } from "../../app/store";
 import KanbanCard from "./KanbanCard";
 interface boardArea {
     sectionName: string,
-    storeType: string
+    storeType: string,
+    onOpen: any
 }
 
-const KanbanBoardSection = ( { sectionName, storeType }: boardArea) => {
+const KanbanBoardSection = ( { sectionName, storeType, onOpen }: boardArea) => {
 
 
     const sectionItems = useSelector((state: RootState) => {
@@ -34,10 +35,12 @@ const KanbanBoardSection = ( { sectionName, storeType }: boardArea) => {
         <div className='sectionBoardArea'>
             <div className='boardTitle'>
                 <h5>{ sectionName }</h5>
-                <h5>0</h5>
+                <h5>{sectionItems.length}</h5>
             </div>
             { sectionItems.map((item, idx) => {
-                return <KanbanCard {...item} key={idx} />
+                return <div onClick={onOpen(item)}>
+                        <KanbanCard {...item} key={idx}  />
+                    </div>
             })}
         </div>
     )

@@ -1,9 +1,6 @@
 import { BiSearch } from 'react-icons/bi';
 
-const KanbanTopMenu = () => {
-    const openTaskPopup = () => {
-        console.log('clicked');
-    }
+const KanbanTopMenu = ({onOpen}: any) => {
     
     return (
         <div className='kanbanTopMenu'>
@@ -15,7 +12,7 @@ const KanbanTopMenu = () => {
                 <h5 >Only My Issues</h5>
                 <h5>Recently Updated</h5>
             </div>
-            <button className='btn' onClick={openTaskPopup}>Create</button>
+            <button className='btn blue-btn' onClick={onOpen} >Create</button>
         </div>
     )
 }
