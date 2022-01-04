@@ -11,14 +11,23 @@
 }
 
 h5 {
-  /* font-size:  13px; */
   font-weight: bold;
-  color: #6e6d6d;
   margin-bottom: 15px;
+}
+
+.main-text {
+  font-size: 14px;
+  color:rgb(95, 94, 94);
+  font-weight: bold;
 }
 
 .container {
   display: flex;
+}
+
+.main-flex {
+  display: flex;
+  align-items: center;
 }
 
 .sideNavBar {
@@ -100,13 +109,25 @@ h5 {
 
 .btn {
   font-size: 13px;
-  font-weight: bold;
   border: none;
-  padding: 8px 8px;
+  padding: 8px 10px;
   border-radius: 4px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:rgb(80, 79, 79);
+}
+
+.blue-btn {
+  background: #0052CC;
+  color: white;
+  font-weight: 500; 
+  font-weight: bold;
+}
+
+.blue-btn:hover {
+  background: #1963D1;
 }
 
 .kanbanTopMenu {
@@ -167,8 +188,9 @@ h5 {
   align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 15px;
   padding: 10px;
+  color:rgb(95, 94, 94);
 }
 
 /* Kanban Area */
@@ -179,7 +201,7 @@ h5 {
   margin: 6px 0;
   padding: 15px;
   border-radius: 4px;
-  box-shadow: 1px 1px 2px #ccc;
+  box-shadow: 1px 1px 2px rgb(201, 201, 201);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -208,11 +230,19 @@ h5 {
 
 .taskItemPopup {
   background: white;
-  width: 500px;
-  height: 300px;
   padding: 20px;
   border-radius: 4px;
-  box-shadow: 1px 2px 2px rgb(65, 64, 64);
+  box-shadow: 4px 5px 2px rgb(146, 146, 146);
+}
+
+.newTaskPopup {
+  width: 500px;
+  height: 300px;
+}
+
+.editTaskPopup {
+  width: 70%;
+  height: 60%;
 }
 
 .formArea {
@@ -239,4 +269,15 @@ h5 {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+}
+
+.popupTopLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popupIcon {
+  margin: 5px 0 5px 0;
+  color:rgb(95, 94, 94);
+  font-size: 20px;
 }
