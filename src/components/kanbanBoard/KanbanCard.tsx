@@ -3,6 +3,7 @@ import { IoMdCheckbox } from 'react-icons/io';
 import { BsFillBookmarkFill } from 'react-icons/bs';
 
 interface kanbanCardTypes {
+    title: string,
     description: string,
     user: string,
     type: string,
@@ -29,7 +30,7 @@ const KanbanCard = (cardItem: kanbanCardTypes)  => {
 
     return (
         <div className='kanbanCardArea' style={cardItem.type === 'task' ? {  borderLeft: '2px solid #4C9AFF'} :  {borderLeft: '2px solid #36B37E' }} >
-            <p>{ cardItem.description }</p>
+            <p>{ cardItem.title }</p>
             <div className='kanbanCardBottom'>
                 <div className='kanbanCardBottom'>
                     <div>

@@ -1,5 +1,9 @@
 import { useState } from 'react'
+import styled from 'styled-components';
 import FormTextInput from "../simpleComponents/FormTextInput"
+import TaskItemArea from "../../styles/TaskPopupStyles";
+
+
 
 const NewTaskItem = ({onClose, onAdd}: any) => {
     const [description, setDescription] = useState('');
@@ -24,8 +28,8 @@ const NewTaskItem = ({onClose, onAdd}: any) => {
     }
 
     return (
-        <form className='taskItemArea' onSubmit={onSubmit}>
-            <div className='taskItemPopup newTaskPopup'>
+        <TaskItemArea onSubmit={onSubmit}>
+            <div className='task-item-popup newTaskPopup'>
                 <h3>Add a new task</h3> 
                 <div className='formArea'>
                     <div className='formTextInputArea'>
@@ -42,7 +46,7 @@ const NewTaskItem = ({onClose, onAdd}: any) => {
                     <button type='submit' className='btn'>Create</button>
                 </div>
             </div>
-        </form>
+        </TaskItemArea>
     )
 }
 
