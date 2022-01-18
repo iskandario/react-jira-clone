@@ -27,10 +27,6 @@ const KanbanBoardSection = ( { sectionName, storeType, onOpen }: boardArea) => {
         }
     });
 
-    console.log('backlog', sectionItems);
-
-
-
     return (
         <div className='sectionBoardArea'>
             <div className='boardTitle'>
@@ -38,8 +34,8 @@ const KanbanBoardSection = ( { sectionName, storeType, onOpen }: boardArea) => {
                 <h5>{sectionItems.length}</h5>
             </div>
             { sectionItems.map((item, idx) => {
-                return <div onClick={onOpen(item)}>
-                        <KanbanCard {...item} key={idx}  />
+                return <div onClick={() => onOpen(item)} key={idx}>
+                        <KanbanCard {...item}  />
                     </div>
             })}
         </div>
