@@ -196,7 +196,7 @@ h5 {
 /* Kanban Area */
 .kanbanCardArea {
   width: 100%;
-  background-color: rgb(173, 173, 173);
+  background-color: rgb(255, 255, 255);
   font-size: 13px;
   margin: 6px 0;
   padding: 15px;
@@ -247,15 +247,14 @@ h5 {
   color: #666;
 }
 
-.popupBtnArea {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-}
-
 
 .popupIcon {
   margin: 5px 0 5px 0;
   color:rgb(95, 94, 94);
   font-size: 20px;
+}
+
+.popupBtnArea {
+  display: flex;
+  justify-content: flex-end;
 }
