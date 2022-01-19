@@ -14,11 +14,11 @@ const NewTaskItem = ({onClose, onAdd}: any) => {
     const onSubmit = (e: any) => {
         e.preventDefault();
         if (!description) return;
-
         onAdd({ description, type, priority, user });
 
         clearValues();
     }
+
 
     const clearValues = () => {
         setDescription('');
@@ -28,7 +28,7 @@ const NewTaskItem = ({onClose, onAdd}: any) => {
     }
 
     return (
-        <TaskItemArea onSubmit={onSubmit}>
+        <TaskItemArea >
             <div className='task-item-popup newTaskPopup'>
                 <h3>Add a new task</h3> 
                 <div className='formArea'>
@@ -43,7 +43,7 @@ const NewTaskItem = ({onClose, onAdd}: any) => {
                 </div>
                 <div className='popupBtnArea'>
                     <button className='btn' style={{ marginRight: '20px' }} onClick={onClose}>Close</button>
-                    <button type='submit' className='btn'>Create</button>
+                    <button type='submit' className='btn' onClick={onSubmit}>Create</button>
                 </div>
             </div>
         </TaskItemArea>
