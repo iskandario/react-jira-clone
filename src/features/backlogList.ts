@@ -9,7 +9,7 @@ const initialState = {
       id: 1,
       type: "task",
       user: "EJ",
-      priority: 1,
+      priority: "1",
       code: "MET-14",
       status: "todo",
       main_details: {
@@ -20,7 +20,7 @@ const initialState = {
       },
       side_details: {
         user: "",
-        priority: null,
+        priority: "",
         reporter: "",
         labels: "",
         project_manager: "",
@@ -38,7 +38,7 @@ const initialState = {
       id: 2,
       type: "task",
       user: "EJ",
-      priority: 4,
+      priority: "4",
       code: "PEP-66",
       status: "todo",
       main_details: {
@@ -49,7 +49,7 @@ const initialState = {
       },
       side_details: {
         user: "",
-        priority: null,
+        priority: "",
         reporter: "",
         labels: "",
         project_manager: "",
@@ -67,7 +67,7 @@ const initialState = {
       id: 1,
       type: "story",
       user: "Ewa",
-      priority: 2,
+      priority: "2",
       code: "PEP-51",
       status: "todo",
       main_details: {
@@ -78,7 +78,7 @@ const initialState = {
       },
       side_details: {
         user: "",
-        priority: null,
+        priority: "",
         reporter: "",
         labels: "",
         project_manager: "",
@@ -99,8 +99,33 @@ export const backlogList = createSlice({
   reducers: {
     // methods to update state
     addItem: (state, action: PayloadAction<TaskItem>) => {
-      console.log("new item payload:", action.payload);
-      state.value.push(action.payload);
+      const payload = action.payload;
+      const newItem = {
+        ...payload,
+        code: `T-${payload.id}`,
+        status: "todo",
+        main_details: {
+          description: payload.description,
+          environment: "",
+          user_stories: "",
+          affected_areas: "",
+        },
+        side_details: {
+          user: payload.user,
+          priority: payload.priority,
+          reporter: "",
+          labels: "",
+          project_manager: "",
+          test: "",
+          client: "",
+          effort: "",
+          start_date: "",
+          chargable: "",
+          fail_count: null,
+        },
+      };
+      console.log("new item payload:", newItem);
+      state.value.push(newItem);
     },
   },
 });

@@ -6,8 +6,8 @@ export interface TaskItem {
   status: string;
   user: string;
   description: string;
-  priority: number | undefined;
-  main_details?: MainTicketDetails;
+  priority: string;
+  main_details: MainTicketDetails;
   side_details?: SideTicketDetails;
 }
 

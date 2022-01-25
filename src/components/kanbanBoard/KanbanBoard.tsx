@@ -53,25 +53,19 @@ const KanbanBoard = () => {
       },
     }
 
-    const [ currentTask, setCurrentTask ] = useState(defaultTask)
+    const [ currentTask, setCurrentTask ] = useState({})
 
     const dispatch = useDispatch();
 
     const addTask = (task: TaskItem) => {
         task.id = Math.floor(Math.random() * 10000) + 1;
 
-        const newTask = { ...defaultTask, ...task };
-
-        console.log('new:', newTask);
-
-        dispatch(addItem(newTask));
+        dispatch(addItem(task));
     }
 
     const openTask = (item: TaskItem) =>  {
       console.log('open', item);
-      const editItem = { ...defaultTask, ...item };
-      console.log('editItem', editItem);
-      // setCurrentTask(editItem);
+      setCurrentTask(item);
       setShowEditTaskCard(true);
     }
 

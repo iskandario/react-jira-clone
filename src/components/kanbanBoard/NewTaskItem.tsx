@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import styled from 'styled-components';
 import FormTextInput from "../simpleComponents/FormTextInput"
 import TaskItemArea from "../../styles/TaskPopupStyles";
 
@@ -7,6 +6,7 @@ import TaskItemArea from "../../styles/TaskPopupStyles";
 
 const NewTaskItem = ({onClose, onAdd}: any) => {
     const [description, setDescription] = useState('');
+    const [title, setTitle] = useState('');
     const [type, setTicketType] = useState('');
     const [priority, setPriority] = useState('');
     const [user, setUser] = useState('');
@@ -14,8 +14,9 @@ const NewTaskItem = ({onClose, onAdd}: any) => {
     const onSubmit = (e: any) => {
         e.preventDefault();
         if (!description) return;
-        onAdd({ description, type, priority, user });
+        onAdd({ title, description, type, priority, user });
 
+        onClose();
         clearValues();
     }
 
@@ -33,12 +34,15 @@ const NewTaskItem = ({onClose, onAdd}: any) => {
                 <h3>Add a new task</h3> 
                 <div className='formArea'>
                     <div className='formTextInputArea'>
-                        <FormTextInput label='Description' inputValue={description} setChange={(e: string) => setDescription(e)}/>
-                        <FormTextInput inputValue={type} setChange={(e: string) => setTicketType(e)} label='Ticket Type'/>
+                        <FormTextInput label='Title' inputType='string' inputValue={title} inputWidth='' setChange={(e: string) => setTitle(e)}/>
+                        <FormTextInput inputType='string' inputValue={type} inputWidth='' setChange={(e: string) => setTicketType(e)} label='Ticket Type'/>
                     </div>
+                    <div>
+                        <FormTextInput label='Description' inputType='string' inputValue={description} inputWidth='full' setChange={(e: string) => setDescription(e)}/>
+                      </div>
                     <div className='formTextInputArea'>
-                        <FormTextInput inputValue={priority} setChange={(e: string) => setPriority(e)} label='Priority'/>
-                        <FormTextInput inputValue={user} setChange={(e: string) => setUser(e)} label='User'/>
+                        <FormTextInput inputType='string' inputValue={priority} inputWidth='' setChange={(e: string) => setPriority(e)} label='Priority'/>
+                        <FormTextInput inputType='string' inputValue={user} inputWidth='' setChange={(e: string) => setUser(e)} label='User'/>
                     </div>
                 </div>
                 <div className='popupBtnArea'>
